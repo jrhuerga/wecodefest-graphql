@@ -2,10 +2,6 @@
 
 This tutorial explains how to take advantage of the GraphQL features of AWS App Sync. 
 
-## Pending
-
-* Specify the names and folders of the files included in git
-
 ## DynamoDB Setup
 
 Create two tables in AWS DynamoDB:
