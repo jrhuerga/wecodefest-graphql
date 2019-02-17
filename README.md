@@ -49,8 +49,8 @@ Deploy both APIs in a new stage named 'beta'.
 
 Use [this Postman collection](postman) to interact with the APIs and create an initial dataset. You will need to create a new Postman environment with these variables:
 
-* movies
-* reviews
+* movies - link to the Movies API in the beta stage created in previous step.
+* reviews - link to the Reviews API
 
 Use the different requests in the collection to verify that all the endpoints are working properly.
 
@@ -63,7 +63,7 @@ Create two datasources of type HTTP:
 * movies - Linking to the URL in API Gateway of the Movies API
 * reviews - Linking to the URL in API Gateway of the Reviews API
 
-Define resolvers for the following types:
+Define resolvers for the following types, queries and mutations:
 
 * Movie.reviews - Data Source: reviews. Configure the request mapping template using [this file](appsync/templates/movie.reviews.txt)
 * Mutation.newMovie - Data Source: movies.Configure the request mapping template using [this file](appsync/templates/mutation.newmovie.txt) 
@@ -74,10 +74,10 @@ Define resolvers for the following types:
 
 ## Test GraphQL API
 
-Use the file [queries.graphql](appsync/queries.graphql) to verify the GraphQL using the Queries tab provided by AWS App Sync
+Use the file [queries.graphql](appsync/queries.graphql) to verify the GraphQL API using the Queries tab provided by AWS App Sync
 
-Alternatively you can use the GraphQL Playground of Prisma ( <https://github.com/prisma/graphql-playground> ) to test the API. You will need to get the API Key from the Settings tab and pass it as a x-api-key header.
-Mention to graphql playground prisma. Keys as headers
+Alternatively you can use the GraphQL Playground of Prisma ( <https://github.com/prisma/graphql-playground> ) to test the GraphQL API. You will need to get the API Key from the Settings tab and pass it as a x-api-key header.
+
 
 
 
