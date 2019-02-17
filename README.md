@@ -15,7 +15,7 @@ Create two tables in AWS DynamoDB:
 
 ## Lambda Functions
 
-Import in Lambda the following six functions (Node.js 8.x):
+Import in Lambda the following [six functions](lambda) (Node.js 8.x):
 
 * MovieList - Used to list all the entries in the table Movies
 * MovieAdd - Used to add a new entry in the table Movies
@@ -51,7 +51,7 @@ Deploy both APIs in a new stage named 'beta'.
 
 ## Populate data
 
-Use the Postman collections to interact with the APIs and create an initial dataset. You will need to create a new Postman environment with these variables:
+Use [this Postman collection](postman) to interact with the APIs and create an initial dataset. You will need to create a new Postman environment with these variables:
 
 * movies
 * reviews
@@ -60,7 +60,7 @@ Use the different requests in the collection to verify that all the endpoints ar
 
 ## App Sync
 
-Create a new AWS App Sync API named Movies. Use the file schema.graphql to create the Schema.
+Create a new AWS App Sync API named Movies. Use the file [schema.graphql](appsync/schema.graphql) to create the Schema.
 
 Create two datasources of type HTTP:
 
@@ -69,16 +69,16 @@ Create two datasources of type HTTP:
 
 Define resolvers for the following types:
 
-* Movie.reviews - Data Source: reviews. Configure the request mapping template using the provided file
-* Mutation.newMovie - Data Source: movies.Configure the request mapping template using the provided file 
-* Query.getMovie - Data Source: movies. Configure the request mapping template using the provided file 
-* Query.getMovies - Data Source: movies. Configure the request mapping template using the provided file
-* Query.getReviews - Data Source: reviews. Configure the request mapping template using the provided file
+* Movie.reviews - Data Source: reviews. Configure the request mapping template using [this file](appsync/templates/movie.reviews.txt)
+* Mutation.newMovie - Data Source: movies.Configure the request mapping template using [this file](appsync/templates/mutation.newmovie.txt) 
+* Query.getMovie - Data Source: movies. Configure the request mapping template using [this file](appsync/templates/query.getmovie.txt) 
+* Query.getMovies - Data Source: movies. Configure the request mapping template using [this file](appsync/templates/query.getmovies.txt)
+* Query.getReviews - Data Source: reviews. Configure the request mapping template using [this file](appsync/templates/query.getreviews.txt)
 
 
 ## Test GraphQL API
 
-Use the file queries.graphql to verify the GraphQL using the Queries tab provided by AWS App Sync
+Use the file [queries.graphql](appsync/queries.graphql) to verify the GraphQL using the Queries tab provided by AWS App Sync
 
 Alternatively you can use the GraphQL Playground of Prisma ( <https://github.com/prisma/graphql-playground> ) to test the API. You will need to get the API Key from the Settings tab and pass it as a x-api-key header.
 Mention to graphql playground prisma. Keys as headers
