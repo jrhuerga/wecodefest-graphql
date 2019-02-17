@@ -1,0 +1,31 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Movie {
+  director: String
+  id: ID!
+  name: String
+  reviews: [Review]
+  year: Int
+}
+
+type Mutation {
+  newMovie(director: String, name: String, year: Int): Movie
+}
+
+type Query {
+  getMovie(id: ID!): Movie
+  getMovies: [Movie]
+  getReview(id: ID!): Review
+  getReviews: [Review]
+}
+
+type Review {
+  comment: String
+  id: ID!
+  idMovie: Int
+  rating: Int
+  spoiler: String
+}

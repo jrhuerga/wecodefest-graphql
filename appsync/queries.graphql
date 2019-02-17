@@ -1,0 +1,42 @@
+query getMovies {
+  getMovies {
+    id
+    name
+    director
+    year
+    reviews {
+      id
+      idMovie
+      comment
+      rating
+      spoiler
+    }
+  } 
+}
+
+query getMovie {
+  getMovie(id: 422) {
+    name
+    id
+  }
+}
+
+query getReviews {
+  getReviews {
+    id
+    comment
+  }
+}
+
+query getReview {
+  getReview (id: 356) {
+    id
+    comment
+  }
+}
+
+mutation newMovie {
+  newMovie(director: "Christopher Nolan", name: "The Dark Knight",year: 2008) {
+    id
+  }
+}
